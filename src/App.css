@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.stil {
+  background-color: #f4c330;
+  display: center; 
+  padding : 10px;
+
+};
