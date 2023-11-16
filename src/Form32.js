@@ -1,24 +1,21 @@
 import { useEffect, useState } from "react";
+import "./StyleForm.css";
 
 const Form32 = () => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    nickName: "",
+    shippingAdress: "",
     email: "",
     comments: "",
     password: "",
   });
-
-  const [name, setName] = useState();
 
   useEffect(() => {
     console.log("Initial FormData", formData);
   }, []);
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-
     setFormData((prev) => {
       return {
         ...prev,
@@ -33,43 +30,55 @@ const Form32 = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="First Home"
-          onChange={handleChange}
-          name="firstName"
-          value={formData.firstName}
-        />
-        <input
-          type="text"
-          placeholder="Last Home"
-          onChange={handleChange}
-          name="lastName"
-          value={formData.lastName}
-        />
-        <input
-          type="text"
-          placeholder="Nick Name"
-          onChange={handleChange}
-          name="nickName"
-          value={formData.nickName}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          onChange={handleChange}
-          name="email"
-          value={formData.email}
-        />
-        <textarea
-          placeholder="Comments"
-          onChange={handleChange}
-          name="comments"
-          value={formData.comments}
-        />
-        <input type="Submit" />
-      </form>
+      <div className="form-box">
+        <div className="field1">
+          <h1> Customer Info </h1>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              className="form-input"
+              placeholder="First Name"
+              onChange={handleChange}
+              name="firstName"
+              value={formData.firstName}
+            />
+            <input
+              type="text"
+              className="form-input"
+              placeholder="Last Name"
+              onChange={handleChange}
+              name="lastName"
+              value={formData.lastName}
+            />
+            <textarea
+              cols="30"
+              rows="10"
+              className="form-input"
+              placeholder="Shipping Adress"
+              onChange={handleChange}
+              name="shippingAdress"
+              value={formData.shippingAdress}
+            />
+
+            <input
+              type="email"
+              className="form-input"
+              placeholder="Email"
+              onChange={handleChange}
+              name="email"
+              value={formData.email}
+            />
+            <textarea
+              className="form-input"
+              placeholder="Comments"
+              onChange={handleChange}
+              name="comments"
+              value={formData.comments}
+            />
+            <input type="Submit" />
+          </form>
+        </div>
+      </div>
     </>
   );
 };
