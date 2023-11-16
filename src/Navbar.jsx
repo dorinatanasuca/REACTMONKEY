@@ -10,6 +10,10 @@ export const Navbar = () => {
       <Link to="/aboutstate2">AboutState2</Link>
       <br/>
       <Link to="/monkeys">Monkeys</Link>
+      <br/>
+      <Link to="/form32">Form32</Link>
+      
+      
     </div>
   );
 };

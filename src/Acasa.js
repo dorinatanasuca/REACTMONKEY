@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "./App";
 
 export const Acasa = () => {
+  const { monkeyName } = useContext(AppContext);
   const [acasaType, setacasaType] = useState("sufragerie");
   const [arata, setArata] = useState(true);
   useEffect(() => {
@@ -41,6 +43,7 @@ export const Acasa = () => {
       <h1>CASA MEA</h1>
       <button onClick={() => setArata((prev) => !prev)}>ARATA</button>
       {arata ? <h1>EXISTA</h1> : <h1>NU EXISTA</h1>};{arata && <h1>EXISTA</h1>};
+      <p1>{monkeyName}</p1>
     </>
   );
 };
